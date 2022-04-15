@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--下面的文件只需要把我注释的两个地方改为自己项目里的相关信息，如果有其它配置需要可以去上面的文档里查看-->
+
+<configuration>
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING" />
+    </settings>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <!--这里是从属性文件db.properties文件读取的键值对数据,用于连接数据库-->
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/ssm?userSSL=true&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC"/>
+                <property name="username" value="root"/>
+                <property name="password" value="db10$ZTE"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <!--这里是改为自己接口的映射文件的路径，下面的第二张图片为例子-->
+        <mapper resource="zte/dao/StudentDao.xml"/>
+    </mappers>
+</configuration>
