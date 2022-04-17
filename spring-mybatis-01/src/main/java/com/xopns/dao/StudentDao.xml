@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace=绑定一个对应的Dao/Mapper接口，相当于实现了接口-->
+<mapper namespace="com.xopns.dao.StudentDao">
+    <!--id=使用的方法名，resulttype=返回结果集的类型（全路径） -->
+    <insert id="insertStudent">
+        insert into springdb.student(id,name,age) value(#{id},#{name},#{age})
+    </insert>
+    <update id="updateStudent">
+        update springdb.student set name=#{name},age=#{age} where id=#{id}
+    </update>
+    <delete id="deleteStudentById">
+        delete from springdb.student where id=#{studentId}
+    </delete>
+    <select id="selectStudentById" resultType="Student">
+        select * from springdb.student where id=#{studentId}
+    </select>
+    <select id="selectAllStudents" resultType="Student">
+        select * from springdb.student order by id desc
+    </select>
+</mapper>

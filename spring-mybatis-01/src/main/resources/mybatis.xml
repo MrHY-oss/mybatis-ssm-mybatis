@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--下面的文件只需要把我注释的两个地方改为自己项目里的相关信息，如果有其它配置需要可以去上面的文档里查看-->
+
+<configuration>
+    <typeAliases>
+        <package name="com.xopns.domain"/>
+    </typeAliases>
+    <mappers>
+        <package name="com.xopns.dao"/>
+    </mappers>
+</configuration>
